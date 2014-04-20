@@ -24,10 +24,13 @@ do ($ = jQuery) ->
                   """
     
     # calculate any 'stack-up'
-    $(".bootstrap-growl").each ->
-      height = $(@).outerHeight()
-      _from   = parseInt $(@).css offset.from
-      offset.amount = Math.max offset.amount, _from + height + spacing
+    # $(".bootstrap-growl").each ->
+    #   height = $(@).outerHeight()
+    #   _from   = parseInt $(@).css offset.from
+    #   offset.amount = Math.max offset.amount, _from + height + spacing
+
+    # remove all existing growl notifications and replace with current
+    $(".bootstrap-growl").remove()
     
     box_alert.css offset.from, css_metrics_val(offset.amount)
     box_alert.css 
@@ -52,7 +55,7 @@ do ($ = jQuery) ->
   
   $.bootstrapGrowl.defaults = 
     # Width of the box (number or css-like string, etc. "auto")
-    width:       250
+    width:       'auto'
     
     # Auto-dismiss timeout. Set it to 0 if you want to disable auto-dismiss
     delay:       4000
@@ -75,7 +78,7 @@ do ($ = jQuery) ->
     type:        null
     
     # Horizontal aligning (left, right or center)
-    align:       'right'
+    align:       'center'
     
     # Margin from the closest side
     alignAmount: 20
@@ -83,7 +86,7 @@ do ($ = jQuery) ->
     # Offset from window bounds
     offset:      
       from:      'top'
-      amount:    20
+      amount:    5
 
   
   $.bootstrapGrowl.noConflict = ->
