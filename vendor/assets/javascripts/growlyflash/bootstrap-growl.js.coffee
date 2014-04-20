@@ -86,7 +86,7 @@ do ($ = jQuery) ->
     # Offset from window bounds
     offset:      
       from:      'top'
-      amount:    5
+      amount:    26
 
   
   $.bootstrapGrowl.noConflict = ->
